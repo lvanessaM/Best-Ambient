@@ -22,10 +22,11 @@ public class Usuario {
 	private int edad;
 	private String genero;
 	private String correo_electronico;
-	private String contraseña;
+	private String contrasena;
 	private String celular;
-
+	private boolean active;
 	private boolean estado;
+	private String domainRoles;
 	
 	@OneToOne
 	@JoinColumn(name = "roles_id")
@@ -48,7 +49,7 @@ public class Usuario {
 		this.edad = edad;
 		this.genero = genero;
 		this.correo_electronico = correo_electronico;
-		this.contraseña = contraseña;
+		this.contrasena = contraseña;
 		this.celular = celular;
 		this.estado = estado;
 		this.roles = roles;
@@ -103,12 +104,12 @@ public class Usuario {
 		this.correo_electronico = correo_electronico;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(String contraseña) {
+		this.contrasena = contraseña;
 	}
 
 	public String getCelular() {
@@ -143,6 +144,23 @@ public class Usuario {
 		this.publicaciones = publicaciones;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public String getDomainRoles() {
+		return domainRoles;
+	}
+
+	public void setDomainRoles(String domainRoles) {
+		this.domainRoles = domainRoles;
+	}
+
+	
 	
 
 }

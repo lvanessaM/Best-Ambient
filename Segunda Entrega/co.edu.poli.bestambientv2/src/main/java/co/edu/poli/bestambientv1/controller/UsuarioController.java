@@ -56,7 +56,7 @@ public class UsuarioController {
 		usuariodb.setEdad(usuarioNew.getEdad());
 		usuariodb.setGenero(usuarioNew.getGenero());
 		usuariodb.setCorreo_electronico(usuarioNew.getCorreo_electronico());
-		usuariodb.setContraseña(usuarioNew.getContraseña());
+		usuariodb.setContrasena(usuarioNew.getContrasena());
 		usuariodb.setRoles(usuarioNew.getRoles());
 		usuariodb.setEstado(usuarioNew.getEstado());
 	

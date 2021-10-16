@@ -6,4 +6,5 @@ import co.edu.poli.bestambientv1.modelo.Usuario;
 
 public interface UsuarioRepository  extends JpaRepository<Usuario, String>{
 
+	Usuario findByNombre(String userName);
 }
