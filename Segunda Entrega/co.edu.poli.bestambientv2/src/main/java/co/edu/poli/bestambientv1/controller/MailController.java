@@ -18,10 +18,10 @@ public class MailController {
 	
 	/* JSON email...
 	{
-	    "mailTo": "wsoto@poligran.edu.co",
+	    "mailTo": "lvamolina@poligran.edu.co",
 	    "mailSubject": "hola mundo",
 	    "mailContent": "bienvenidos",
-	    "attachments" : ["/Users/wilsonsoto/Downloads/TransaccionPNCBANK.pdf"]
+	    "attachments" : ["/Users/Bestambient/Downloads/TransaccionPNCBANK.pdf"]
 	}
 	*/
 	@RequestMapping(value = "/api/v1/msg", method=RequestMethod.GET)
