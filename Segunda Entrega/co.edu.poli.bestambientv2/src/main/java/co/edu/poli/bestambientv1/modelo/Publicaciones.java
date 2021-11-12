@@ -1,5 +1,7 @@
 package co.edu.poli.bestambientv1.modelo;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +19,7 @@ public class Publicaciones {
 	private Long id;
 	private String Descripcion;
 	private Boolean estado;
+	private Date fecha;
 
 
 	
@@ -28,12 +31,13 @@ public class Publicaciones {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Publicaciones(String descripcion, Boolean estado, long id, Usuario usuarios) {
+	public Publicaciones(String descripcion, Boolean estado, long id, Usuario usuarios, Date fecha) {
 		super();
 		Descripcion = descripcion;
 		this.estado = estado;
 		this.id = id;
 		this.usuarios = usuarios;
+		this.fecha = fecha;
 	}
 
 	public String getDescripcion() {
@@ -66,6 +70,14 @@ public class Publicaciones {
 
 	public void setUsuarios(Usuario usuarios) {
 		this.usuarios = usuarios;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 	
