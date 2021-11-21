@@ -16,7 +16,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	private static final long serialVersionUID = -6855979919718350058L;
 
-	private String userName;
+	private String nombre;
 
 	private String password;
 
@@ -25,7 +25,7 @@ public class UserDetailsImpl implements UserDetails {
 	private List<GrantedAuthority> authorities;
 
 	public UserDetailsImpl(Usuario user) {
-		this.userName = user.getNombre();
+		this.nombre = user.getNombre();
 		this.password = user.getContrasena();
 		this.active = user.isActive();
 		this.authorities = Arrays.stream(user.getDomainRoles().split(",")).map(SimpleGrantedAuthority::new)
@@ -47,7 +47,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return userName;
+		return nombre;
 	}
 
 	@Override

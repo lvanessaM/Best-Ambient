@@ -44,6 +44,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   		
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder()); 
 		
+		
+		
 		auth.inMemoryAuthentication() 
 			.withUser("wilson")
 			.password("$2a$10$l.Rxc0VECmpHjinzxMG/wunvebywkRtSwIkSk./Th0ip2k6quv92i") //using method passwordEncoder 
@@ -51,7 +53,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
   
   }
-
+	
 	@Override protected void configure(HttpSecurity http) throws Exception {
 		 http.cors()
 		 	.and()
