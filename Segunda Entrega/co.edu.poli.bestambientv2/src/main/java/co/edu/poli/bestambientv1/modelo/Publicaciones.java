@@ -1,6 +1,10 @@
 package co.edu.poli.bestambientv1.modelo;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -10,11 +14,12 @@ import javax.persistence.Table;
 @Table(name="Publicaciones")
 public class Publicaciones {
  
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String Descripcion;
 	private Boolean estado;
-	@Id
-	private String code;
+	private Date fecha;
 
 
 	
@@ -26,12 +31,13 @@ public class Publicaciones {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Publicaciones(String descripcion, Boolean estado, String code, Usuario usuarios) {
+	public Publicaciones(String descripcion, Boolean estado, long id, Usuario usuarios, Date fecha) {
 		super();
 		Descripcion = descripcion;
 		this.estado = estado;
-		this.code = code;
+		this.id = id;
 		this.usuarios = usuarios;
+		this.fecha = fecha;
 	}
 
 	public String getDescripcion() {
@@ -50,12 +56,12 @@ public class Publicaciones {
 		this.estado = estado;
 	}
 
-	public String getCode() {
-		return code;
+	public long getId() {
+		return id;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Usuario getUsuarios() {
@@ -64,6 +70,14 @@ public class Publicaciones {
 
 	public void setUsuarios(Usuario usuarios) {
 		this.usuarios = usuarios;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 	

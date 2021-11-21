@@ -3,6 +3,8 @@ package co.edu.poli.bestambientv1.modelo;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -16,7 +18,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Usuario {
 
 	@Id
-	private  String id ;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String nombre;
 	private String apellidos;
 	private int edad;
@@ -44,7 +47,7 @@ public class Usuario {
 		
 	}
 
-	public Usuario(String id, String nombre, String apellidos, int edad, String genero, String correo_electronico,
+	public Usuario(Long id, String nombre, String apellidos, int edad, String genero, String correo_electronico,
 			String contraseña, String celular, boolean estado, Roles roles, List<Publicaciones> publicaciones) {
 		super();
 		this.id = id;
@@ -60,11 +63,11 @@ public class Usuario {
 		this.publicaciones = publicaciones;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
