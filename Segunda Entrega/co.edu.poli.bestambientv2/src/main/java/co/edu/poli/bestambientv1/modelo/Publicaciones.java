@@ -17,6 +17,7 @@ public class Publicaciones {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String Titulo;
 	private String Descripcion;
 	private Boolean estado;
 	private Date fecha;
@@ -31,13 +32,23 @@ public class Publicaciones {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Publicaciones(String descripcion, Boolean estado, long id, Usuario usuarios, Date fecha) {
+	public Publicaciones(String descripcion, Boolean estado, long id, Usuario usuarios, Date fecha,String titulo) {
 		super();
 		Descripcion = descripcion;
+
+		Titulo = titulo;
 		this.estado = estado;
 		this.id = id;
 		this.usuarios = usuarios;
 		this.fecha = fecha;
+	}
+
+	public String getTitulo() {
+		return Titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		Titulo = titulo;
 	}
 
 	public String getDescripcion() {
