@@ -54,10 +54,7 @@ public class PublicacionesController {
 	
 		
 		publicacionesdb.setDescripcion(publicacionesNew.getDescripcion());
-		publicacionesdb.setEstado(publicacionesNew.getEstado());
-		publicacionesdb.setCode(publicacionesNew.getCode());
-
-	
+		publicacionesdb.setEstado(publicacionesNew.getEstado());	
 		
 		publicacionesRepository.save(publicacionesdb);
 		return publicacionesdb;
