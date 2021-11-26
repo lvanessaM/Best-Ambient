@@ -1,6 +1,8 @@
 package co.edu.poli.bestambientv1.modelo;
 
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

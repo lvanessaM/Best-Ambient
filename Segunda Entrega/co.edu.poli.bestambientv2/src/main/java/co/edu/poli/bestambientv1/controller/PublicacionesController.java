@@ -24,7 +24,7 @@ public class PublicacionesController {
 	@Autowired
 	private PublicacionesRepository publicacionesRepository;
 
-	@GetMapping("/publicacioness")
+	@GetMapping("/publicaciones")
 	public List<Publicaciones> getAllPublicaciones() {
 		// The stateRepository is already injected and you can use it
 		return publicacionesRepository.findAll();
@@ -41,7 +41,7 @@ public class PublicacionesController {
 		return publicacionesRepository.save(publicaciones);
 	}
 	
-	@PostMapping("/publicaciones1")
+	@PostMapping("/publicacionesss")
 	public String createPublicacionesList(@RequestBody List<Publicaciones> publicaciones) {
 		publicacionesRepository.saveAll(publicaciones);
 	return "Insercion Correcta";
@@ -60,7 +60,7 @@ public class PublicacionesController {
 		return publicacionesdb;
 	}
 
-	@DeleteMapping("/states")
+	@DeleteMapping("/publicaciones/{id}")
 	public Publicaciones deletestate(@RequestParam("Code") String id) {
 		Publicaciones publicacionesdb = publicacionesRepository.findById(id).get();
 		publicacionesRepository.delete(publicacionesdb);

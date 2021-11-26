@@ -40,7 +40,7 @@ public class RolesController {
 		return rolRepository.save(rol);
 	}
 	
-	@PostMapping("/Roles1")
+	@PostMapping("/Roless")
 	public String createStateList(@RequestBody List<Roles> rols) {
 	rolRepository.saveAll(rols);
 	return "Insercion Correcta";

@@ -27,7 +27,7 @@ public class ReunionesController {
 		@Autowired
 		private ReunionesRepository reunionesRepository;
 
-		@GetMapping("/Reunioness")
+		@GetMapping("/Reuniones")
 		public List<Reuniones> getAllReuniones() {
 			// The stateRepository is already injected and you can use it
 			return reunionesRepository.findAll();
@@ -44,7 +44,7 @@ public class ReunionesController {
 			return reunionesRepository.save(Reuniones);
 		}
 		
-		@PostMapping("/Reuniones1")
+		@PostMapping("/Reunioness")
 		public String createReunionesList(@RequestBody List<Reuniones> Reuniones) {
 			reunionesRepository.saveAll(Reuniones);
 		return "Insercion Correcta";

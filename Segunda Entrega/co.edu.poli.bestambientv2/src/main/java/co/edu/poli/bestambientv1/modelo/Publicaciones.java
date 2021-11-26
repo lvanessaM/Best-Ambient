@@ -32,16 +32,19 @@ public class Publicaciones {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Publicaciones(String descripcion, Boolean estado, long id, Usuario usuarios, Date fecha,String titulo) {
-		super();
-		Descripcion = descripcion;
+	
 
-		Titulo = titulo;
-		this.estado = estado;
+	public Publicaciones(Long id, String titulo, String descripcion, Boolean estado, Date fecha, Usuario usuarios) {
+		super();
 		this.id = id;
-		this.usuarios = usuarios;
+		Titulo = titulo;
+		Descripcion = descripcion;
+		this.estado = estado;
 		this.fecha = fecha;
+		this.usuarios = usuarios;
 	}
+
+
 
 	public String getTitulo() {
 		return Titulo;

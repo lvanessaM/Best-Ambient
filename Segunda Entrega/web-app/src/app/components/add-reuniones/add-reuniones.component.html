@@ -1,32 +1,21 @@
 <form #myForm="ngForm">
     <div style="width: 500px; margin: auto">
-      <h3>Insertar una publicacion</h3>
+      <h3>Insertar una reunion</h3>
       <div class="submit-form">
         <div *ngIf="!submitted">
           
           <div class="form-group">
-            <label for="name">Titulo</label>
+            <label for="name">LUGAR DE ENCUENTRO</label>
             <input
               type="text"
               class="form-control"
-              id="Titulo"
+              id="lugar_encuentro"
               required
-              [(ngModel)]="publicaciones.Titulo"
-              name="Titulo"
+              [(ngModel)]="reuniones.lugar_encuentro"
+              name="lugar_encuentro"
             />
           </div>
   
-          <div class="form-group">
-            <label for="author">Descripcion</label>
-            <input
-              type="text"
-              class="form-control"
-              id="Descripcion"
-              required
-              [(ngModel)]="publicaciones.Descripcion"
-              name="Descripcion"
-            />
-          </div>
           <div class="form-check from-switch">
             <label for="author">Estado</label>
             <input
@@ -34,25 +23,25 @@
               class="form-control"
               id="Estado"
               required
-              [(ngModel)]="publicaciones.estado"
+              [(ngModel)]="reuniones.estado"
               name="Estado"
             />
           </div>
           <div class="form-group">
-            <label for="author">Fecha</label>
+            <label for="author">Usuarios</label>
             <input
-              type="date"
+              type="text"
               class="form-control"
-              id="fecha"
+              id="Usuario"
               required
-              [(ngModel)]="publicaciones.fecha"
-              name="fecha"
+              [(ngModel)]="reuniones.Usuario"
+              name="Usuario"
             />
           </div>
           <hr />
   
           <button
-            (click)="savePublicacion()"
+            (click)="saveReunion()"
             [disabled]="!myForm.form.valid"
             class="btn btn-success"
           >
