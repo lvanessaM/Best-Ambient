@@ -22,5 +22,6 @@ export class LoginComponent implements OnInit {
         ' passw: ' +
         sessionStorage.getItem('password')
     );
+    window.location.assign('/inicio');
   }
 }
