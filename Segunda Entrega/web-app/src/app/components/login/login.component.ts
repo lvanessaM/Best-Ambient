@@ -16,6 +16,11 @@ export class LoginComponent implements OnInit {
   login() {
     localStorage.setItem('username', this.username);
     localStorage.setItem('password', this.password);
-    console.log('user: ' + this.username + ' passw: ' + this.password);
+    console.log(
+      'user: ' +
+        localStorage.getItem('username') +
+        ' passw: ' +
+        localStorage.getItem('password')
+    );
   }
 }

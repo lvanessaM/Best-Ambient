@@ -4,18 +4,19 @@ import { Observable } from 'rxjs';
 import { Publicaciones } from '../model/publicaciones';
 
 const baseUrl = 'http://localhost:8080/api/v1/publicaciones';
-let username = localStorage.getItem('usenarme');
-let password = localStorage.getItem('paswword');
-const headers = new HttpHeaders({
-  Authorization: 'Basic' + btoa(username + ':' + password),
-});
+let headers;
 
 @Injectable({
   providedIn: 'root',
 })
 export class PublicacionesService {
-  constructor(private http: HttpClient) {}
-
+  constructor(private http: HttpClient) {
+    let username = localStorage.getItem('username');
+    let password = localStorage.getItem('password');
+    headers = new HttpHeaders({
+      Authorization: 'Basic ' + btoa(username + ':' + password),
+    });
+  }
   getAll(): Observable<Publicaciones[]> {
     return this.http.get<Publicaciones[]>(baseUrl, { headers });
   }
