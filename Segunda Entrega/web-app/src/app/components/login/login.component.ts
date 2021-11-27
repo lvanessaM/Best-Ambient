@@ -14,13 +14,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    localStorage.setItem('username', this.username);
-    localStorage.setItem('password', this.password);
+    sessionStorage.setItem('username', this.username);
+    sessionStorage.setItem('password', this.password);
     console.log(
       'user: ' +
-        localStorage.getItem('username') +
+        sessionStorage.getItem('username') +
         ' passw: ' +
-        localStorage.getItem('password')
+        sessionStorage.getItem('password')
     );
   }
 }

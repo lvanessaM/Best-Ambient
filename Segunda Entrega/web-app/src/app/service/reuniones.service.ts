@@ -10,8 +10,8 @@ let headers;
 })
 export class ReunionesService {
   constructor(private http: HttpClient) {
-    let username = localStorage.getItem('username');
-    let password = localStorage.getItem('password');
+    let username = sessionStorage.getItem('username');
+    let password = sessionStorage.getItem('password');
     headers = new HttpHeaders({
       Authorization: 'Basic ' + btoa(username + ':' + password),
     });

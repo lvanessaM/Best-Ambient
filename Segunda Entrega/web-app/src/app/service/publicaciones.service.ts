@@ -11,8 +11,8 @@ let headers;
 })
 export class PublicacionesService {
   constructor(private http: HttpClient) {
-    let username = localStorage.getItem('username');
-    let password = localStorage.getItem('password');
+    let username = sessionStorage.getItem('username');
+    let password = sessionStorage.getItem('password');
     headers = new HttpHeaders({
       Authorization: 'Basic ' + btoa(username + ':' + password),
     });
@@ -26,6 +26,7 @@ export class PublicacionesService {
   }
 
   create(data: any): Observable<any> {
+    console.log(headers);
     return this.http.post(baseUrl, data, { headers });
   }
 
