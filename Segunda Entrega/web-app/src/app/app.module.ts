@@ -15,6 +15,7 @@ import { AddReunionesComponent } from './components/add-reuniones/add-reuniones.
 
 import { LoginComponent } from './components/login/login.component';
 import { TipoproblemasComponent } from './components/tipoproblemas/tipoproblemas.component';
+import { ListReunionesComponent } from './components/list-reuniones/list-reuniones.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TipoproblemasComponent } from './components/tipoproblemas/tipoproblemas
 
     LoginComponent,
     TipoproblemasComponent,
+    ListReunionesComponent,
   ],
   imports: [
     BrowserModule,
