@@ -1,0 +1,13 @@
+
+footer{
+    margin-top: auto;
+    padding: 3em;
+}
+.hola{
+    min-height: 100vh;
+
+    display:flex;
+    flex-direction: column;
+    margin-top: auto;
+
+}
