@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"co.edu.poli.bestambientv1"},{"l":"co.edu.poli.bestambientv1.config"},{"l":"co.edu.poli.bestambientv1.controller"},{"l":"co.edu.poli.bestambientv1.modelo"},{"l":"co.edu.poli.bestambientv1.repository"},{"l":"co.edu.poli.bestambientv1.services"},{"l":"co.edu.poli.states"}];updateSearchResults();

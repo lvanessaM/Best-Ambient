@@ -21,7 +21,7 @@ export class AddPublicacionesComponent implements OnInit {
       titulo: this.titulo,
       descripcion: this.publicaciones.descripcion,
       estado: this.publicaciones.estado,
-      fecha: this.publicaciones.fecha,
+      fecha: this.publicaciones.fecha
     };
     this.PublicacionesService.create(data).subscribe(
       (data) => {

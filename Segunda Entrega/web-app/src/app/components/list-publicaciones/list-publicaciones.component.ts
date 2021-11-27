@@ -11,7 +11,7 @@ export class ListPublicacionesComponent implements OnInit {
   publicacionesSet!: Publicaciones[];
   publicacionesFil!: Publicaciones[];
   currentPublicacion: Publicaciones;
-  idpublicaciones: string;
+  idPublicaciones: number;
   P1!: number;
   P2!: number;
   collectionSize!: number;
@@ -72,7 +72,7 @@ export class ListPublicacionesComponent implements OnInit {
     );
   }
 
-  retrievePublicacion(val: string): void {
+  retrievePublicacion(val: number): void {
     this.publicacionesService.get(val).subscribe(
       (data) => {
         this.currentPublicaciones = data;
@@ -99,7 +99,7 @@ export class ListPublicacionesComponent implements OnInit {
       );
   }
 
-  deletePublicacion(val1: string): void {
+  deletePublicacion(val1: number): void {
     this.publicacionesService.delete(val1).subscribe(
       (data) => {
         this.refreshList();

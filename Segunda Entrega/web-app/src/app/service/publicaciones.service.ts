@@ -21,7 +21,7 @@ export class PublicacionesService {
     return this.http.get<Publicaciones[]>(baseUrl, { headers });
   }
 
-  get(id: String): Observable<Publicaciones> {
+  get(id: number): Observable<Publicaciones> {
     return this.http.get<Publicaciones>(`${baseUrl}/${id}`, { headers });
   }
 
@@ -30,11 +30,11 @@ export class PublicacionesService {
     return this.http.post(baseUrl, data, { headers });
   }
 
-  update(id: string, data: any): Observable<any> {
+  update(id: number, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data, { headers });
   }
 
-  delete(id: string): Observable<any> {
+  delete(id: number): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`, { headers });
   }
 

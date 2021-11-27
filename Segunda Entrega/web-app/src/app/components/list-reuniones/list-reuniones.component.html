@@ -1,1 +1,118 @@
 <p>list-reuniones works!</p>
+<div class="container">
+    <div class="container mt-3">
+      <div class="mt-4 p-5 bg-success text-white rounded">
+        <h3 class="text-center"><b>Reuniones</b></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group form-inline">
+          Busca la reunion:
+          <input
+            class="form-control ml-2 btn-outline-info"
+            type="text"
+            name="searchTerm"
+            [(ngModel)]="searchTerm"
+          />
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <th>lugar_encuentro</th>
+            <th>descripciom_actividad</th>
+            <th>estado</th>
+            </thead>
+          <tbody>
+            <tr *ngFor="let publicacion of reunionesSet; let i = index">
+              <td>{{ publicacion.lugar_encuentro }}</td>
+              <td>{{ publicacion.descripciom_actividad }}</td>
+              <td>{{ publicacion.estado }}</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-outline-info"
+                  (click)="triggerModal(modalData, publicacion)"
+                >
+                  Edit
+                </button>
+                &nbsp;
+                <button
+                  class="btn btn-outline-danger btn-sm"
+                  (click)="deletePublicacion(publicacion.id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #modalData let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit Reuniones</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div style="width: 400px; margin: auto">
+        <div class="submit-form">
+          <div class="form-group"></div>
+          <div class="form-group">
+            <label for="name">lugar_encuentro</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lugar_encuentro"
+              required
+              [(ngModel)]="currentReuniones.lugar_encuentro"
+              name="lugar_encuentro"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">descripciom_actividad</label>
+            <input
+              type="text"
+              class="form-control"
+              id="descripciom_actividad"
+              required
+              [(ngModel)]="currentReuniones.descripciom_actividad"
+              name="descripciom_actividad"
+            />
+          </div>
+          <div class="form-group form-check">    
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="Estado"
+              required
+              [(ngModel)]="currentReuniones.estado"
+              name="Estado"
+     />
+     <label class="form-check-label" for="estado"> ESTADO</label>
+  
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-outline-success"
+        (click)="updateReuniones()"
+        (click)="modal.close('Save click')"
+      >
+        Guardar
+      </button>
+    </div>
+  </ng-template>
+  
+  

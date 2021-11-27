@@ -33,7 +33,7 @@ public class PublicacionesController {
 	}
 
 	@GetMapping("/publicaciones/{id}")
-	public Publicaciones getPublicacionesById(@PathVariable String id) {
+	public Publicaciones getPublicacionesById(@PathVariable Long id) {
 		Publicaciones publicaciones = publicacionesRepository.findById(id).get();
 		return publicaciones;
 	}
@@ -51,7 +51,7 @@ public class PublicacionesController {
 	
 
 	@PutMapping("/publicaciones/{id}")
-	public Publicaciones updatepublicaciones(@PathVariable String id, @RequestBody Publicaciones publicacionesNew) {
+	public Publicaciones updatepublicaciones(@PathVariable Long id, @RequestBody Publicaciones publicacionesNew) {
 		Publicaciones publicacionesdb = publicacionesRepository.findById(id).get();
 	
 		
@@ -61,13 +61,14 @@ public class PublicacionesController {
 		publicacionesRepository.save(publicacionesdb);
 		return publicacionesdb;
 	}
-
-	@DeleteMapping("/publicaciones/{id}")
-	public Publicaciones deletestate(@RequestParam("id") String id) {
+	@DeleteMapping("/authors/{id}")
+	public Publicaciones deleteAuthor(@PathVariable Long id) {
 		Publicaciones publicacionesdb = publicacionesRepository.findById(id).get();
-		publicacionesRepository.delete(publicacionesdb);
-		return publicacionesdb;
+	publicacionesRepository.delete(publicacionesdb);
+	return publicacionesdb;
 	}
+
+	
 
 	
 

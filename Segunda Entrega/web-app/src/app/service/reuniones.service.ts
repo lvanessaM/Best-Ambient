@@ -21,7 +21,7 @@ export class ReunionesService {
     return this.http.get<Reuniones[]>(baseUrl, { headers });
   }
 
-  get(id: String): Observable<Reuniones> {
+  get(id: number): Observable<Reuniones> {
     return this.http.get<Reuniones>(`${baseUrl}/${id}`, { headers });
   }
 
@@ -29,11 +29,11 @@ export class ReunionesService {
     return this.http.post(baseUrl, data, { headers });
   }
 
-  update(id: string, data: any): Observable<any> {
+  update(id: number, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data, { headers });
   }
 
-  delete(id: string): Observable<any> {
+  delete(id: number): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`, { headers });
   }
 

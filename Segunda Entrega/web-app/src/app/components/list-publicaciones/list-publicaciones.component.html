@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container mt-3">
-    <div class="mt-4 p-5 bg-primary text-white rounded">
+    <div class="mt-4 p-5 bg-success text-white rounded">
       <h3 class="text-center"><b>Publicaciones</b></h3>
     </div>
   </div>
@@ -88,16 +88,17 @@
             name="descripcion"
           />
         </div>
-        <div class="form-group">
-          <label for="name">estado</label>
+        <div class="form-group form-check">    
           <input
-            type="text"
-            class="form-control"
-            id="estado"
+            type="checkbox"
+            class="form-check-input"
+            id="Estado"
             required
             [(ngModel)]="currentPublicaciones.estado"
-            name="estado"
-          />
+            name="Estado"
+   />
+   <label class="form-check-label" for="estado"> ESTADO</label>
+
         </div>
         <div class="form-group">
           <label for="name">fecha</label>
@@ -107,7 +108,7 @@
             id="fecha"
             required
             [(ngModel)]="currentPublicaciones.fecha"
-            name="required"
+            name="fecha"
           />
         </div>
       </div>
@@ -124,99 +125,4 @@
     </button>
   </div>
 </ng-template>
-<br />
-<h4>Publicacion List</h4>
 
-<div class="ladoYlado">
-  <div class="row scroll">
-    <ul class="list-group">
-      <li
-        class="list-group-item btn-info"
-        *ngFor="let publicacionId of publicacionesSet; let i = index"
-        [class.active]="i == currentIndex"
-        (click)="setActivePublicaciones(publicacionId, i)"
-      >
-        <div class="col btn-outline-info">
-          <font color="white-success">{{ publicacionId.descripcion }}</font>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="card-text">
-    <form #f="ngForm" class="form-inline">
-      <div class="form-group">
-        <label for="id" style="text-align: right">id:</label>
-        <input
-          [(ngModel)]="idpublicaciones"
-          id="name"
-          name="name"
-          class="form-control ml-2 mr-2 btn-outline-info"
-          style="text-align: right"
-        />
-      </div>
-      <button
-        (click)="retrievePublicacion(idpublicaciones)"
-        [disabled]="!f?.valid"
-        class="btn btn-outline-primary"
-      >
-        Buscar
-      </button>
-    </form>
-  </div>
-</div>
-
-<div class="col-md-6">
-  <div *ngIf="currentPublicacion">
-    <div>
-      <label><strong>id:</strong></label> {{ currentPublicacion.titulo }}
-      <label><strong>name:</strong></label>
-      {{ currentPublicacion.descripcion }} <label><strong>rda:</strong></label>
-      {{ currentPublicacion.estado }} <label><strong>wiki:</strong></label>
-      {{ currentPublicacion.fecha }}
-    </div>
-  </div>
-  <br />
-
-  <hr />
-</div>
-<div>
-  <h2></h2>
-  <!-- > <form #f="ngForm" class="form-inline">
-  
-      <input class="form-control si" type="number" [(ngModel)]="min" name="searchTerm" placeholder="Rango min.." />
-  
-      <input class="form-control si" type="number" [(ngModel)]="max" name="searchTerm" placeholder="Ranog Max.." />
-      <button (click)="retrieveNutrientxd(min,max)" [disabled]="!f?.valid" class="btn btn-outline-info">enviar </button>
-  
-    </form>
-    <div class="card">
-      <div class="card-body">
-        <div class="form-group form-inline">
-          <table class="table table-striped">
-            <thead>
-  
-              <th>Name</th>
-              <th>rda</th>
-              <th>wiki</th>
-              <th>required</th>
-              <th>type</th>
-              <th>tui</th>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of rdaSet ">
-  
-                <td>{{item.name}}</td>
-                <td>{{item.rda}}</td>
-                <td>{{item.wiki}}</td>
-                <td>{{item.required}}</td>
-                <td>{{item.type}}</td>
-                <td>{{item.tui}}</td>
-
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>  -->
-</div>

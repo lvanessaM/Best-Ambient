@@ -17,8 +17,8 @@ public class Publicaciones {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String Titulo;
-	private String Descripcion;
+	private String titulo;
+	private String descripcion;
 	private Boolean estado;
 	private Date fecha;	
 	
@@ -30,41 +30,14 @@ public class Publicaciones {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
-	public Publicaciones(String titulo, String descripcion, Boolean estado, Date fecha, Usuario usuarios) {
+	public Publicaciones(long id, String titulo, String descripcion, Boolean estado, Date fecha, Usuario usuarios) {
 		super();
-		Titulo = titulo;
-		Descripcion = descripcion;
+		this.id = id;
+		this.titulo = titulo;
+		this.descripcion = descripcion;
 		this.estado = estado;
 		this.fecha = fecha;
 		this.usuarios = usuarios;
-	}
-
-
-
-	public String getTitulo() {
-		return Titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		Titulo = titulo;
-	}
-
-	public String getDescripcion() {
-		return Descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
-	}
-
-	public Boolean getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Boolean estado) {
-		this.estado = estado;
 	}
 
 	public long getId() {
@@ -75,12 +48,28 @@ public class Publicaciones {
 		this.id = id;
 	}
 
-	public Usuario getUsuarios() {
-		return usuarios;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setUsuarios(Usuario usuarios) {
-		this.usuarios = usuarios;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
 	}
 
 	public Date getFecha() {
@@ -90,6 +79,16 @@ public class Publicaciones {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
+
+	public Usuario getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(Usuario usuarios) {
+		this.usuarios = usuarios;
+	}
+
+	
 
 	
 	
