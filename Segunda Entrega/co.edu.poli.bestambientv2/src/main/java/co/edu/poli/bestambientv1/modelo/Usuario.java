@@ -49,7 +49,8 @@ public class Usuario {
 	}
 
 	public Usuario(Long id, String nombre, String apellidos, int edad, String genero, String correo_electronico,
-			String contraseña, String celular, boolean estado, Roles roles, List<Publicaciones> publicaciones) {
+			String contrasena, String celular, boolean active, boolean estado, String domainRoles, Roles roles,
+			List<Publicaciones> publicaciones, List<Reuniones> reuniones) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -57,11 +58,14 @@ public class Usuario {
 		this.edad = edad;
 		this.genero = genero;
 		this.correo_electronico = correo_electronico;
-		this.contrasena = contraseña;
+		this.contrasena = contrasena;
 		this.celular = celular;
+		this.active = active;
 		this.estado = estado;
+		this.domainRoles = domainRoles;
 		this.roles = roles;
 		this.publicaciones = publicaciones;
+		this.reuniones = reuniones;
 	}
 
 	public Long getId() {
@@ -116,8 +120,8 @@ public class Usuario {
 		return contrasena;
 	}
 
-	public void setContrasena(String contraseña) {
-		this.contrasena = contraseña;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 	public String getCelular() {
@@ -128,12 +132,28 @@ public class Usuario {
 		this.celular = celular;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	public boolean getEstado() {
 		return estado;
 	}
 
 	public void setEstado(boolean estado) {
 		this.estado = estado;
+	}
+
+	public String getDomainRoles() {
+		return domainRoles;
+	}
+
+	public void setDomainRoles(String domainRoles) {
+		this.domainRoles = domainRoles;
 	}
 
 	public Roles getRoles() {
@@ -152,20 +172,12 @@ public class Usuario {
 		this.publicaciones = publicaciones;
 	}
 
-	public boolean isActive() {
-		return active;
+	public List<Reuniones> getReuniones() {
+		return reuniones;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
-	public String getDomainRoles() {
-		return domainRoles;
-	}
-
-	public void setDomainRoles(String domainRoles) {
-		this.domainRoles = domainRoles;
+	public void setReuniones(List<Reuniones> reuniones) {
+		this.reuniones = reuniones;
 	}
 
 	

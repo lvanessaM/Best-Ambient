@@ -12,8 +12,9 @@ import { ListFilterPipe } from './service/filter.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddReunionesComponent } from './components/add-reuniones/add-reuniones.component';
-import { InicioComponent } from './components/inicio/inicio.component';
+
 import { LoginComponent } from './components/login/login.component';
+import { TipoproblemasComponent } from './components/tipoproblemas/tipoproblemas.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import { LoginComponent } from './components/login/login.component';
     ListPublicacionesComponent,
     ListFilterPipe,
     AddReunionesComponent,
-    InicioComponent,
+
     LoginComponent,
+    TipoproblemasComponent,
   ],
   imports: [
     BrowserModule,
