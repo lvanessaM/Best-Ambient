@@ -1,144 +1,187 @@
 <div class="container">
-    <div class="container mt-3">
-      <div class="mt-4 p-5 bg-primary text-white rounded">
-        <h3 class="text-center"><b>Publicaciones</b></h3>
-      </div>
-    </div>
-    <div class="card">
-  
-      <div class="card-body">
-        <div class="form-group form-inline">
-          Busca la publicacion:
-          <input class="form-control ml-2 btn-outline-info" type="text" name="searchTerm" [(ngModel)]="searchTerm" />
-        </div>
-        <table class="table table-striped">
-          <thead>
-  
-            <th>titulo</th>
-            <th>descripcion</th>
-            <th>estado</th>
-            <th>fecha</th>
-           
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of publicacionesSet | listFilter: searchTerm ; let i = index ">
-  
-              <td>{{item.titulo}}</td>
-              <td>{{item.descripcion}}</td>
-              <td>{{item.estado}}</td>
-              <td>{{item.fecha}}</td>
-              <td>
-                <button class="btn  btn-sm btn-outline-info" (click)="triggerModal(modalData, item)">
-                  Edit </button>
-                &nbsp;
-                <button class='btn btn-outline-danger btn-sm' (click)="deletePublicacion(item.id)">
-                  Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-  
+  <div class="container mt-3">
+    <div class="mt-4 p-5 bg-primary text-white rounded">
+      <h3 class="text-center"><b>Publicaciones</b></h3>
     </div>
   </div>
-  
-  
-  <ng-template #modalData let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Edit Publicaciones</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">×</span>
-      </button>
-    </div>
-    <div class="modal-body">
-  
-      <div style="width: 400px; margin: auto;">
-        <div class="submit-form">
-          <div class="form-group">
-          </div>
-          <div class="form-group">
-            <label for="name">titulo</label>
-            <input type="text" class="form-control" id="titulo" required [(ngModel)]="currentPublicaciones.titulo" name="titulo" />
-          </div>
-          <div class="form-group">
-            <label for="name">descripcion</label>
-            <input type="text" class="form-control" id="descripcion" required [(ngModel)]="currentPublicaciones.descripcion" name="descripcion" />
-          </div>
-          <div class="form-group">
-            <label for="name">estado</label>
-            <input type="text" class="form-control" id="estado" required [(ngModel)]="currentPublicaciones.estado" name="estado" />
-          </div>
-          <div class="form-group">
-            <label for="name">fecha</label>
-            <input type="date" class="form-control" id="fecha" required [(ngModel)]="currentPublicaciones.fecha"
-              name="required" />
-          </div>
-        </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group form-inline">
+        Busca la publicacion:
+        <input
+          class="form-control ml-2 btn-outline-info"
+          type="text"
+          name="searchTerm"
+          [(ngModel)]="searchTerm"
+        />
       </div>
-  
+      <table class="table table-striped">
+        <thead>
+          <th>titulo</th>
+          <th>descripcion</th>
+          <th>estado</th>
+          <th>fecha</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let publicacion of publicacionesSet; let i = index">
+            <td>{{ publicacion.titulo }}</td>
+            <td>{{ publicacion.descripcion }}</td>
+            <td>{{ publicacion.estado }}</td>
+            <td>{{ publicacion.fecha }}</td>
+            <td>
+              <button
+                class="btn btn-sm btn-outline-info"
+                (click)="triggerModal(modalData, publicacion)"
+              >
+                Edit
+              </button>
+              &nbsp;
+              <button
+                class="btn btn-outline-danger btn-sm"
+                (click)="deletePublicacion(publicacion.id)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-success" (click)="updatePublicaciones()"
-        (click)="modal.close('Save click')">Guardar</button>
-    </div>
-  </ng-template>
-  <br>
-  <h4>Publicacion List</h4>
-  
-  <div class="ladoYlado">
-    <div class="row scroll">
-  
-  
-      <ul class="list-group">
-        <li class="list-group-item btn-info" *ngFor="let publicacionId of publicacionesSet; let i = index"
-          [class.active]="i == currentIndex" (click)="setActivePublicaciones(publicacionId, i)">
-          <div class="col btn-outline-info">
-            <font color="white-success">{{ publicacionId.descripcion }}</font>
-          </div>
-        </li>
-      </ul>
-    
-    </div>
-    <div class="card-text">
-      <form #f="ngForm" class="form-inline">
+  </div>
+</div>
+
+<ng-template #modalData let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit Publicaciones</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div style="width: 400px; margin: auto">
+      <div class="submit-form">
+        <div class="form-group"></div>
         <div class="form-group">
-          <label for="id" style="text-align:right">id:</label>
-          <input [(ngModel)]="idPublicacion" id="name" name="name" class="form-control ml-2 mr-2 btn-outline-info"
-            style="text-align:right">
+          <label for="name">titulo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="titulo"
+            required
+            [(ngModel)]="currentPublicaciones.titulo"
+            name="titulo"
+          />
         </div>
-        <button (click)="retrievePublicacion(idPublicacion)" [disabled]="!f?.valid"
-          class="btn btn-outline-primary">Buscar</button>
-      </form>
-    </div>
-  </div>
-  
-  
-  <div class="col-md-6">
-    <div *ngIf="currentPublicacion">
-      <div>
-        <label><strong>id:</strong></label> {{ currentPublicacion.titulo }}
-        <label><strong>name:</strong></label> {{ currentPublicacion.descripciom }}
-        <label><strong>rda:</strong></label> {{ currentPublicacion.estado }}
-        <label><strong>wiki:</strong></label> {{ currentPublicacion.fecha }}
-   
-  
+        <div class="form-group">
+          <label for="name">descripcion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="descripcion"
+            required
+            [(ngModel)]="currentPublicaciones.descripcion"
+            name="descripcion"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">estado</label>
+          <input
+            type="text"
+            class="form-control"
+            id="estado"
+            required
+            [(ngModel)]="currentPublicaciones.estado"
+            name="estado"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">fecha</label>
+          <input
+            type="date"
+            class="form-control"
+            id="fecha"
+            required
+            [(ngModel)]="currentPublicaciones.fecha"
+            name="required"
+          />
+        </div>
       </div>
     </div>
-    <br>
-  
-  
-  
-  
-    <hr>
-  
-  
-  
   </div>
-  <div>
-    <h2>
-  
-    </h2>
-    <!-- > <form #f="ngForm" class="form-inline">
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-success"
+      (click)="updatePublicaciones()"
+      (click)="modal.close('Save click')"
+    >
+      Guardar
+    </button>
+  </div>
+</ng-template>
+<br />
+<h4>Publicacion List</h4>
+
+<div class="ladoYlado">
+  <div class="row scroll">
+    <ul class="list-group">
+      <li
+        class="list-group-item btn-info"
+        *ngFor="let publicacionId of publicacionesSet; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActivePublicaciones(publicacionId, i)"
+      >
+        <div class="col btn-outline-info">
+          <font color="white-success">{{ publicacionId.descripcion }}</font>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="card-text">
+    <form #f="ngForm" class="form-inline">
+      <div class="form-group">
+        <label for="id" style="text-align: right">id:</label>
+        <input
+          [(ngModel)]="idpublicaciones"
+          id="name"
+          name="name"
+          class="form-control ml-2 mr-2 btn-outline-info"
+          style="text-align: right"
+        />
+      </div>
+      <button
+        (click)="retrievePublicacion(idpublicaciones)"
+        [disabled]="!f?.valid"
+        class="btn btn-outline-primary"
+      >
+        Buscar
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div *ngIf="currentPublicacion">
+    <div>
+      <label><strong>id:</strong></label> {{ currentPublicacion.titulo }}
+      <label><strong>name:</strong></label>
+      {{ currentPublicacion.descripcion }} <label><strong>rda:</strong></label>
+      {{ currentPublicacion.estado }} <label><strong>wiki:</strong></label>
+      {{ currentPublicacion.fecha }}
+    </div>
+  </div>
+  <br />
+
+  <hr />
+</div>
+<div>
+  <h2></h2>
+  <!-- > <form #f="ngForm" class="form-inline">
   
       <input class="form-control si" type="number" [(ngModel)]="min" name="searchTerm" placeholder="Rango min.." />
   
@@ -176,3 +219,4 @@
       </div>
     </div>
   </div>  -->
+</div>

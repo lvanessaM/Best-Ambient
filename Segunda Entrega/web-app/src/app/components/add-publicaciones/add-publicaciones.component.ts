@@ -19,7 +19,7 @@ export class AddPublicacionesComponent implements OnInit {
   savePublicacion(): void {
     const data = {
       titulo: this.titulo,
-      descripcion: this.publicaciones.Descripcion,
+      descripcion: this.publicaciones.descripcion,
       estado: this.publicaciones.estado,
       fecha: this.publicaciones.fecha,
     };

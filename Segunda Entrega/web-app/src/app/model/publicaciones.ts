@@ -1,6 +1,7 @@
 import { Usuarios } from 'src/app/model/usuarios';
 export class Publicaciones {
-  Titulo: string;
+  id: string;
+  titulo: string;
   descripcion: string;
   estado!: boolean;
   fecha: Date;

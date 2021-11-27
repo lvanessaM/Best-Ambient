@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Publicaciones } from 'src/app/model/publicaciones';
 import { PublicacionesService } from 'src/app/service/publicaciones.service';
-import { ModalDismissReasons, NgbModal} from  '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-list-publicaciones',
   templateUrl: './list-publicaciones.component.html',
-  styleUrls: ['./list-publicaciones.component.css']
+  styleUrls: ['./list-publicaciones.component.css'],
 })
 export class ListPublicacionesComponent implements OnInit {
   publicacionesSet!: Publicaciones[];
   publicacionesFil!: Publicaciones[];
-  idpublicaciones!: string;
+  currentPublicacion: Publicaciones;
+  idpublicaciones: string;
   P1!: number;
   P2!: number;
   collectionSize!: number;
@@ -20,11 +21,10 @@ export class ListPublicacionesComponent implements OnInit {
   currentPublicaciones: any;
   currentIndex = -1;
 
-
   constructor(
     private publicacionesService: PublicacionesService,
     private modalService: NgbModal
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.refreshList();
@@ -55,7 +55,7 @@ export class ListPublicacionesComponent implements OnInit {
 
   search(value: string): void {
     this.publicacionesFil = this.publicacionesSet.filter((val) =>
-      val.Titulo.toLowerCase().includes(value)
+      val.titulo.toLowerCase().includes(value)
     );
     this.collectionSize = this.publicacionesFil.length;
   }
@@ -86,15 +86,17 @@ export class ListPublicacionesComponent implements OnInit {
   }
 
   updatePublicaciones(): void {
-    this.publicacionesService.update(this.currentPublicaciones.id, this.currentPublicaciones).subscribe(
-      (data) => {
-        this.refreshList();
-        console.log(data);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    this.publicacionesService
+      .update(this.currentPublicaciones.id, this.currentPublicaciones)
+      .subscribe(
+        (data) => {
+          this.refreshList();
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
   deletePublicacion(val1: string): void {
@@ -116,6 +118,4 @@ export class ListPublicacionesComponent implements OnInit {
   refreshList(): void {
     this.retrievePublicaciones();
   }
-
-
 }
