@@ -1,7 +1,7 @@
 # Best-Ambient
 # OBJETIVOS
 
-El desarrollo del software best ambient fomentará el cuidado del medio ambiente mediante la campaña (Cambiando al mundo) enseñando las consecuencias de la contaminación ambiental y promoviendo información sobre el cuidado del medio ambiente  
+El desarrollo del software best ambient fomentará el cuidado del medio ambiente mediante la campaña (Cambiando al mundo) enseñando las consecuencias de la contaminación ambiental y promoviendo información sobre el cuidado del medio ambiente
 
 # PLANTEAMIENTO DEL PROBLEMA
 
@@ -10,6 +10,4 @@ En la actualidad presentamos muchos problemas ambientales que afectan los ecosis
 
 # JUSTIFICACIÓN
 
-Best Ambient es un software diseñado para informar sobre el impacto ambiental y llevar un registro completo de las personas que participen en la campaña cambiando al mundo, las cuales estarán encargadas de propagar medidas para el cuidado del medio ambiente y así garantizar la concientización de la población y disminuir la contaminación.
-
-
+Best Ambient es un software diseñado para informar sobre el impacto ambiental y permitirá que mediante publicaciones las personas conozcan como cuidar el medio ambiente, garantizando la concientización de las personas y la toma de acciones para mejorar el medio ambiente cumpliendo con el propósito de la campaña Cambiando al mundo
