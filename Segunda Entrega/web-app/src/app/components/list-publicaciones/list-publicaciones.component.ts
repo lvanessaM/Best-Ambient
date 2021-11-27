@@ -97,7 +97,7 @@ export class ListPublicacionesComponent implements OnInit {
     );
   }
 
-  deleteFood(val1: string): void {
+  deletePublicacion(val1: string): void {
     this.publicacionesService.delete(val1).subscribe(
       (data) => {
         this.refreshList();
