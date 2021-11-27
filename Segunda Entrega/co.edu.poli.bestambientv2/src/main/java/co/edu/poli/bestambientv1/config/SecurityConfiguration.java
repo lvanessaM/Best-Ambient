@@ -1,4 +1,4 @@
-package co.edu.poli.bestambientv1.config;
+	package co.edu.poli.bestambientv1.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,12 +23,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		/* Providers */ 
 		//first case memory users only without encryption
-	/*
+	
 		auth.inMemoryAuthentication() 
-			.withUser("wilson") 
+			.withUser("julian") 
 			.password("{noop}123456")//{noop} plain text comment methods noPasswordEncoder/passwordEncoder
 			.roles("ADMIN");
-  	
+		
+		auth.inMemoryAuthentication() 
+		.withUser("julian") 
+		.password("{noop}123456")//{noop} plain text comment methods noPasswordEncoder/passwordEncoder
+		.roles("USER");
+		/*	
 		
 		//second case database users and memory without encryption
 		
@@ -39,22 +44,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.password("123456") //using method noPasswordEncoder
 			.roles("ADMIN");
   		
- */
+
 		//third case database users and memory with encryption
   		
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder()); 
 		
-		
+
 		
 		auth.inMemoryAuthentication() 
 			.withUser("wilson")
 			.password("$2a$10$l.Rxc0VECmpHjinzxMG/wunvebywkRtSwIkSk./Th0ip2k6quv92i") //using method passwordEncoder 
 			.roles("ADMIN");
-		
+		*/
   
   }
 	
 	@Override protected void configure(HttpSecurity http) throws Exception {
+		
 		 http.cors()
 		 	.and()
 			.csrf().disable() //Cross-Site Request Forgery (falsificación de petición en sitios cruzados) 
@@ -64,11 +70,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.antMatchers("/api/v1/msg").hasRole("ADMIN")
 			.anyRequest().authenticated() //For any other request, you do not need specific role but still need to be authenticated. 
 			.and() 
-			.formLogin()//authentication method 
-			.and() 
-			.httpBasic() //authentication method (allow test postman POST,DELETE,PUT) 
-			.and() 
-			.logout();//http://localhost:8080/login?logout 
+			.httpBasic(); //authentication method (allow test postman POST,DELETE,PUT) 
 	}
 
 /*
@@ -76,12 +78,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public PasswordEncoder noPasswordEncoder() {
 		return NoOpPasswordEncoder.getInstance();
 	}
-
-	*/
+*/
+/*
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		PasswordEncoder encoder = new BCryptPasswordEncoder();
 		return encoder;
 	}
-
+*/
 }

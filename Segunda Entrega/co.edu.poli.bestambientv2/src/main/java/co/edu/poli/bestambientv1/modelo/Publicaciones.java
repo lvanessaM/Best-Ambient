@@ -16,13 +16,11 @@ public class Publicaciones {
  
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
 	private String Titulo;
 	private String Descripcion;
 	private Boolean estado;
-	private Date fecha;
-
-
+	private Date fecha;	
 	
 	 @ManyToOne
 	    @JoinColumn(name = "Usuario_id")
@@ -34,9 +32,8 @@ public class Publicaciones {
 
 	
 
-	public Publicaciones(Long id, String titulo, String descripcion, Boolean estado, Date fecha, Usuario usuarios) {
+	public Publicaciones(String titulo, String descripcion, Boolean estado, Date fecha, Usuario usuarios) {
 		super();
-		this.id = id;
 		Titulo = titulo;
 		Descripcion = descripcion;
 		this.estado = estado;
