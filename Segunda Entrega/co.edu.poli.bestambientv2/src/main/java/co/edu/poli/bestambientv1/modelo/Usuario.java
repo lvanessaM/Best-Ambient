@@ -38,10 +38,11 @@ public class Usuario {
 	@OneToMany (mappedBy = "usuarios")
 	@JsonIgnore
 	private List<Publicaciones> publicaciones;
-	
+
 	@OneToMany(mappedBy = "usuario")
 	@JsonIgnore
 	private List<Reuniones> reuniones;
+	
 	
 	public Usuario() {
 		

@@ -8,11 +8,12 @@ import { AppComponent } from './app.component';
 import { AddPublicacionesComponent } from './components/add-publicaciones/add-publicaciones.component';
 import { ListPublicacionesComponent } from './components/list-publicaciones/list-publicaciones.component';
 
-import {ListFilterPipe} from './service/filter.service'
+import { ListFilterPipe } from './service/filter.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddReunionesComponent } from './components/add-reuniones/add-reuniones.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +22,17 @@ import { InicioComponent } from './components/inicio/inicio.component';
     ListPublicacionesComponent,
     ListFilterPipe,
     AddReunionesComponent,
-    InicioComponent
+    InicioComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
