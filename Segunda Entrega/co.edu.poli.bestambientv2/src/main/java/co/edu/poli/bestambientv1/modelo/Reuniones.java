@@ -21,6 +21,7 @@ public class Reuniones {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private  int id;
 	private String lugar_encuentro ;
+	private String descripciom_actividad;
 	private boolean estado;
 		
 	
@@ -32,10 +33,11 @@ public class Reuniones {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Reuniones(int id, String lugar_encuentro, boolean estado, Usuario usuario) {
+	public Reuniones(int id, String lugar_encuentro, String descripciom_actividad, boolean estado, Usuario usuario) {
 		super();
 		this.id = id;
 		this.lugar_encuentro = lugar_encuentro;
+		this.descripciom_actividad = descripciom_actividad;
 		this.estado = estado;
 		this.usuario = usuario;
 	}
@@ -56,6 +58,14 @@ public class Reuniones {
 		this.lugar_encuentro = lugar_encuentro;
 	}
 
+	public String getDescripciom_actividad() {
+		return descripciom_actividad;
+	}
+
+	public void setDescripciom_actividad(String descripciom_actividad) {
+		this.descripciom_actividad = descripciom_actividad;
+	}
+
 	public boolean getEstado() {
 		return estado;
 	}
@@ -70,7 +80,8 @@ public class Reuniones {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}	
+	}
+
 	
 	
 	

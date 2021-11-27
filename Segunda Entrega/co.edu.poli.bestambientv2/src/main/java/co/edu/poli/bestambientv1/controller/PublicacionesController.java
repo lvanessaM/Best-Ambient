@@ -63,7 +63,7 @@ public class PublicacionesController {
 	}
 
 	@DeleteMapping("/publicaciones/{id}")
-	public Publicaciones deletestate(@RequestParam("Code") String id) {
+	public Publicaciones deletestate(@RequestParam("id") String id) {
 		Publicaciones publicacionesdb = publicacionesRepository.findById(id).get();
 		publicacionesRepository.delete(publicacionesdb);
 		return publicacionesdb;

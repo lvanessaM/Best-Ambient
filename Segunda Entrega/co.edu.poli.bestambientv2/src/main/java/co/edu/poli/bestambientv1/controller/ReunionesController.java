@@ -59,6 +59,7 @@ public class ReunionesController {
 		
 			Reunionesdb.setId(ReunionesNew.getId());
 			Reunionesdb.setLugar_encuentro(ReunionesNew.getLugar_encuentro());
+			Reunionesdb.setDescripciom_actividad(ReunionesNew.getDescripciom_actividad());
 			Reunionesdb.setEstado(ReunionesNew.getEstado());
 			
 

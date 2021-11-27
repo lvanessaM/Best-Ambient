@@ -19,9 +19,9 @@ export class AddReunionesComponent implements OnInit {
   saveReunion(): void {
     const data = {
       id!:this.reuniones.id,
-      Titulo!:this.reuniones.lugar_encuentro,
+      lugar_encuentro!:this.reuniones.lugar_encuentro,
       estado!:this.reuniones.estado,
-       Usuarios!:this.reuniones.Usuario
+      descripciom_actividad!:this.reuniones.descripciom_actividad
 
     };this.ReunionesService.create(data)
     .subscribe(
