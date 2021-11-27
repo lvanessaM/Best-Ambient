@@ -20,9 +20,7 @@ public class Publicaciones {
 	private String Titulo;
 	private String Descripcion;
 	private Boolean estado;
-	private Date fecha;
-
-
+	private Date fecha;	
 	
 	 @ManyToOne
 	    @JoinColumn(name = "Usuario_id")

@@ -8,6 +8,7 @@ import { PublicacionesService } from 'src/app/service/publicaciones.service';
   styleUrls: ['./add-publicaciones.component.css'],
 })
 export class AddPublicacionesComponent implements OnInit {
+  titulo: string;
   publicaciones = new Publicaciones();
   submitted = false;
   msgError = '';
@@ -17,10 +18,10 @@ export class AddPublicacionesComponent implements OnInit {
   ngOnInit(): void {}
   savePublicacion(): void {
     const data = {
-      Titulo: this.publicaciones.Titulo,
+      titulo: this.titulo,
       Descripcion: this.publicaciones.Descripcion,
       estado: this.publicaciones.estado,
-      Date: this.publicaciones.fecha,
+      Date: this.publicaciones.Titulo,
     };
     this.PublicacionesService.create(data).subscribe(
       (data) => {
